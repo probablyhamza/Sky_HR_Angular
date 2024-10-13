@@ -1,0 +1,117 @@
+
+
+.btn-outline-custom {
+    color: #247f3e;
+    border-color: #247f3e;
+}
+
+.btn-outline-custom:hover {
+    background-color: #247f3e;
+    color: white;
+}
+
+.btn-link-custom {
+    color: #247f3e;
+}
+
+.btn-link-custom:hover {
+    color: #34b95a;
+}
+
+.btn-custom {
+    color: white;
+    background-color: #247f3e;
+    border-radius: 5px;
+    
+}
+
+.card-custom-bg {
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.icon-custom {
+    color: #949494;
+}
+
+.card-custom-green {
+    border-color: #247f3e;
+    background-color: #247f3e;
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card-custom-green .card-body {
+    display: felx;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.card-custom-green .icon-number {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.card-custom-green h4 {
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.fa-clipboard-list {
+    font-size: 4rem; 
+}
+
+.small-text {
+    font-size: 0.875rem;
+    margin-top: 10px;
+    text-align: left;
+    
+}
+
+.big-text {
+    font-size: 3.5rem;
+}
+
+.fa-list {
+    font-size: 4rem;
+}
+
+.carousel-item img {
+    max-height: 250px; 
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.vacation-card {
+    border-color: #e0e0e0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 270px; 
+}
+
+.vacation-card .card-body {
+    padding: 15px; /* Customize padding for vacation card */
+}
+
+.vacation-card .card-img-top {
+    width: 80px; /* Adjust profile image size for vacation card */
+    height: 80px; /* Adjust height */
+}
+
+.vacation-card .card-footer {
+    padding: 10px; /* Adjust padding for footer */
+}

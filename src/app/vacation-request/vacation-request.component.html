@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center p-4">
+        <h3><i class="fa-regular fa-clipboard"></i>Vacation Requests</h3>
+        <form class="d-flex position-relative" role="search">
+            <input [(ngModel)]="searchTerm" name="search" class="form-control" type="search" placeholder="Search..." aria-label="Search" style="padding-left: 40px;" />
+              <i class="fa-solid fa-magnifying-glass position-absolute" style="left: 15px; top: 50%; transform: translateY(-50%); color: #247f3e;"></i>
+          </form>
+    </div>
+
+    <div class="search-filter">
+        <input type="checkbox" id="select-all" />
+        <label for="select-all" class="me-3">Select All</label>
+    </div>
+
+    <!-- "Search not found" message -->
+    <div id="not-found-message" class="text-center mt-4" style="display: none;">
+        <h5>No vacation requests found.</h5>
+    </div>
+
+    
+</div>
+
+<!-- Cards Section -->
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let request of vacationRequests">
+        <div class="card" style="width: 100%;">
+          <!-- Add 'rounded-circle' for circular image and 'mx-auto d-block' to center the image -->
+          <img class="card-img-top rounded-circle mx-auto d-block" src="../../assets/ahmad_azmi.jpg" alt="Card image cap" style="width: 150px; height: 150px; object-fit: cover; margin-top: 20px;">
+          <div class="card-body text-center">
+            <h5 class="card-title" [innerHTML]="request.name | highlight:searchTerm"></h5>
+            <div class="text-left">
+              <p class="card-text">
+                <strong>Submitted on:</strong> {{request.submittedOn}}<br>
+                <strong>Duration:</strong> {{request.duration}}<br>
+                <strong>Salary:</strong> {{request.salary}} AED
+              </p>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-custom me-2" style="margin-right: 7px;">Approve</button>
+            <button class="btn btn-outline-custom">Decline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

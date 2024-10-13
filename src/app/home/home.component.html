@@ -1,0 +1,155 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-12">
+            <h3 style="color: #222222;">Welcome Back {{ EmployeeName }}! Here are your latest updates.</h3>
+        </div>
+        <div col-md-4 text-md-right style="margin-top: 15px;">
+            <button class="btn btn-custom btn-sm ml-5 p-2">New Requests</button>
+        </div>
+    </div>
+
+    <!-- Profile Card -->
+    <div class="row mt-5">
+        <div class="col-lg-6 mb-3">
+            <div class="card card-custom-bg p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <img src="../../assets/ahmad_azmi.jpg" class="rounded-circle "  width="70" height="60" alt="Profile Picture">
+                        <div class="ms-3" style="margin-left: 10px;">
+                            <h5 class="mb-0" >Ahmad Azmi</h5>
+                            <p class="text-muted mb-1">Junior Accounting Officer</p>
+                        </div>
+                    </div>
+                    <a [routerLink]="'/profile'">
+                        <button class="btn btn-outline-custom btn-sm ms-auto">View Profile</button>
+                    </a>
+                </div>
+                <div class="mt-3 d-flex justify-content-between align-items-center">
+                    <div>
+                      <p class="mb-1">
+                        <i class="fa-solid fa-user icon-custom"></i>
+                        <strong style="margin-left: 10px;">Reporting To:</strong> Salwa Assem
+                      </p>
+                    </div>
+                    <div>
+                      <p class="mb-1">
+                        <i class="fa-solid fa-ranking-star icon-custom"></i>
+                        <strong style="margin-left: 10px;">Corporate Level:</strong> Level 10
+                      </p>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-3 col-md-6 mt-1 mb-3">
+            <div class="card text-center pb-0 card-custom-green text-white">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h4 class=" ml-5 mb-0 big-text">10</h4>
+                    </div>
+                    
+                    <p class="small-text " style="margin-left: 50px;">Vacation Requests</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-1 mb-3">
+            <div class="card text-center pb-0 card-custom-green text-white">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-center mb-2">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h4 class=" ml-5 mb-0 big-text">10</h4>
+                    </div>
+                    
+                    <p class="small-text" style="margin-left: 50px;">Leave Requests</p>
+                </div>
+            </div>
+        </div>
+
+         <!-- Latest News Carousel -->
+         <div class="container mt-5">
+            <h4>Latest News:</h4>
+            <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#newsCarousel" data-slide-to="1"></li>
+                    <li data-target="#newsCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="../../assets/wallhaven-76my93_1920x1080.png" alt="First slide">
+                        <div class="carousel-caption">
+                            <h5>Best Spots For A Summer Vacation</h5>
+                            <p>Check out these spots where we provide you with a discount code! Type VACATION when inserting the promo code and behold the surprise!</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../../assets/wallhaven-exgovw_1920x1080.png" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h5>Explore the Wonders of the City</h5>
+                            <p>Discover the hidden gems of the city with our exclusive tour packages.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="../../assets/wallhaven-l8xqoq_1920x1080.png" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h5>Adventure Awaits</h5>
+                            <p>Embark on an adventure of a lifetime with our carefully curated travel experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+
+        <div class="container mt-5 mb-3 card-custom-bg p-3">
+            <!-- Header Section -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    
+    <h3>Vacation Requests</h3>
+    <form class="d-flex position-relative" role="search">
+      <input [(ngModel)]="searchTerm" name="search" class="form-control" type="search" placeholder="Search..." aria-label="Search" style="padding-left: 40px;" />
+        <i class="fa-solid fa-magnifying-glass position-absolute" style="left: 15px; top: 50%; transform: translateY(-50%); color: #247f3e;"></i>
+    </form>
+  </div>
+  
+  <!-- Cards Section -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let request of vacationRequests">
+        <div class="card" style="width: 100%;">
+          <!-- Add 'rounded-circle' for circular image and 'mx-auto d-block' to center the image -->
+          <img class="card-img-top rounded-circle mx-auto d-block" src="../../assets/ahmad_azmi.jpg" alt="Card image cap" style="width: 150px; height: 150px; object-fit: cover; margin-top: 20px;">
+          <div class="card-body text-center">
+            <h5 class="card-title" [innerHTML]="request.name | highlight:searchTerm"></h5>
+            <div class="text-left">
+              <p class="card-text">
+                <strong>Submitted on:</strong> {{request.submittedOn}}<br>
+                <strong>Duration:</strong> {{request.duration}}<br>
+                <strong>Salary:</strong> {{request.salary}} AED
+              </p>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-custom me-2" style="margin-right: 7px;">Approve</button>
+            <button class="btn btn-outline-custom">Decline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+    
+            <!-- View More Button -->
+            <div class="text-md-right mt-4">
+                <a [routerLink]="'/vacation-request'" class="btn btn-link-custom">View More ></a>
+            </div>
+        </div>

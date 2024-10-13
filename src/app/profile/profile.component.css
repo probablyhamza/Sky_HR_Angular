@@ -1,0 +1,91 @@
+.card-custom-bg {
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.btn-outline-custom {
+    color: #247f3e;
+    border-color: #247f3e;
+}
+
+.btn-outline-custom:hover {
+    background-color: #247f3e;
+    color: white;
+}
+
+.btn-custom {
+    color: white;
+    background-color: #247f3e;
+    border-radius: 5px;
+    
+}
+
+.btn-link-custom {
+    color: #247f3e;
+}
+
+.btn-link-custom:hover {
+    color: #34b95a;
+}
+
+
+.stats {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.stat i {
+    font-size: 27px;
+    margin-right: 10px;
+    color: #949494;
+}
+
+.stat span {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.card-custom-bg {
+    border-color: #f2f2f2;
+    background-color: #f2f2f2;
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.small-text {
+    font-size: 0.875rem;
+    margin-top: 10px;
+    text-align: left;
+    
+}
+
+.big-text {
+    font-size: 3.5rem;
+}
+
+.fa-list {
+    font-size: 4rem;
+}
+
+.fa-clipboard {
+    color: #247f3e;
+    margin:auto 5px auto 10px;
+}
+
+.card-custom-shadow {
+    border-color: white;
+    background-color: white;
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}

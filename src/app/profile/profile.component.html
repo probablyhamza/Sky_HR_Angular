@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+
+<div class="container mt-5">
+    <!-- Profile Card -->
+    <div class="row mt-5">
+      <div class="col-lg-12 mb-3">
+        <div class="card card-custom-bg p-4">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img [src]="profilePicture" class="rounded-circle mr-3" width="70" height="60" alt="Profile Picture">
+              <div class="ms-3">
+                <h5 class="mb-0">{{ profileName }}</h5>
+                <p class="text-muted mb-1">{{ profileJobTitle }}</p>
+              </div>
+            </div>
+            <a href="../profile/profile.html">
+              <button class="btn btn-custom btn-sm ms-auto">New Request</button>
+            </a>
+          </div>
+  
+          <div class="row text-center mt-4 stats">
+            <div class="stat col-6 col-md-4 col-lg-2 mb-3">
+              <i class="fas fa-user"></i>
+              <span><strong>Reporting To:</strong><br>{{ reportingTo }}</span>
+            </div>
+            <div class="stat col-6 col-md-4 col-lg-2 mb-3">
+              <i class="fas fa-chart-line"></i>
+              <span><strong>Corporate Level:</strong><br>{{ corporateLevel }}</span>
+            </div>
+            <div class="stat col-6 col-md-4 col-lg-2 mb-3">
+              <i class="fas fa-hourglass"></i>
+              <span><strong>Lifetime:</strong><br>{{ lifetime }}</span>
+            </div>
+            <div class="stat col-6 col-md-4 col-lg-2 mb-3">
+              <i class="fas fa-umbrella-beach"></i>
+              <span><strong>Vacation Days Left:</strong><br>{{ vacationDaysLeft }}</span>
+            </div>
+            <div class="stat col-6 col-md-4 col-lg-2 mb-3">
+              <i class="fas fa-medkit"></i>
+              <span><strong>Sick Days Left:</strong><br>{{ sickDaysLeft }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- History Section -->
+    <div class="container mt-5 mb-3 card-custom-bg p-3">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3><i class="fa-regular fa-clipboard"></i> History</h3>
+      </div>
+  
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-3" *ngFor="let history of vacationHistory">
+          <div class="card p-3 card-custom-shadow">
+            <h5 class="card-title">{{ history.type }}</h5>
+            <p class="card-text">{{ history.startDate }} - {{ history.endDate }} <br> {{ history.days }} days</p>
+            <small>Approved by: {{ history.approvedBy }}</small>
+          </div>
+        </div>
+      </div>
+  
+      <!-- View More Button -->
+      <div class="text-md-right mt-4">
+        <a href="../vac-request/vacation-request.html" class="btn btn-link-custom">View More ></a>
+      </div>
+    </div>
+  </div>
+
+<div class="container mt-5 mb-3 card-custom-bg p-3">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3>Vacation Requests</h3>
+        
+    </div>
+
+    <!-- Cards Section -->
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 col-lg-4 mb-4" *ngFor="let request of vacationRequests">
+        <div class="card" style="width: 100%;">
+          <!-- Add 'rounded-circle' for circular image and 'mx-auto d-block' to center the image -->
+          <img class="card-img-top rounded-circle mx-auto d-block" src="../../assets/ahmad_azmi.jpg" alt="Card image cap" style="width: 150px; height: 150px; object-fit: cover; margin-top: 20px;">
+          <div class="card-body text-center">
+            <h5 class="card-title" [innerHTML]="request.name | highlight:searchTerm"></h5>
+            <div class="text-left">
+              <p class="card-text">
+                <strong>Submitted on:</strong> {{request.submittedOn}}<br>
+                <strong>Duration:</strong> {{request.duration}}<br>
+                <strong>Salary:</strong> {{request.salary}} AED
+              </p>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-custom me-2" style="margin-right: 7px;">Approve</button>
+            <button class="btn btn-outline-custom">Decline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <!-- View More Button -->
+    <div class="text-md-right mt-4">
+        <a [routerLink]="'/vacation-request'" class="btn btn-link-custom">View More ></a>
+    </div>
+</div>

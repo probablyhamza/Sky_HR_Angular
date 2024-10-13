@@ -1,0 +1,63 @@
+.fa-clipboard {
+    color: #247f3e;
+    margin:auto 5px auto 10px;
+}
+
+.search-filter {
+    display: flex;
+    align-items: center;
+    margin-left: 35px;
+    margin-bottom: 20px;
+  }
+
+  .search-filter input {
+    margin-bottom: 5px;
+    margin-right: 10px;
+  }
+
+  .vacation-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .btn-outline-custom {
+    color: #247f3e;
+    border-color: #247f3e;
+}
+
+.btn-outline-custom:hover {
+    background-color: #247f3e;
+    color: white;
+}
+
+.btn-link-custom {
+    color: #247f3e;
+}
+
+.btn-link-custom:hover {
+    color: #34b95a;
+}
+
+.btn-custom {
+    color: white;
+    background-color: #247f3e;
+    border-radius: 5px;
+    
+}
+
+.card {
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.highlight {
+    border: 2px solid #247f3e; 
+    background-color: #f0f8f0; 
+}
